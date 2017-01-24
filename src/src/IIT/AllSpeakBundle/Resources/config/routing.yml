@@ -1,0 +1,3 @@
+iit_all_speak_homepage:
+    path:     /
+    defaults: { _controller: IITAllSpeakBundle:Default:index }

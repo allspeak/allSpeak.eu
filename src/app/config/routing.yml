@@ -1,3 +1,7 @@
+iit_all_speak:
+    resource: "@IITAllSpeakBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
