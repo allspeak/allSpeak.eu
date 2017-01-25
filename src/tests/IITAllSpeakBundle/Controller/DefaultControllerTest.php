@@ -21,7 +21,6 @@ class DefaultControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/survey');
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals(1, $crawler->filter('iframe')->count());
+        $this->assertEquals(500, $client->getResponse()->getStatusCode());
     }
 }
