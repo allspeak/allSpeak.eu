@@ -10,4 +10,8 @@ class DefaultController extends Controller
     {
         return $this->render('IITAllSpeakBundle:Default:index.html.twig');
     }
+    public function surveyAction()
+    {
+        return $this->render('IITAllSpeakBundle:Default:survey.html.twig');
+    }
 }

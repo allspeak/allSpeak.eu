@@ -1,3 +1,8 @@
 iit_all_speak_homepage:
     path:     /
     defaults: { _controller: IITAllSpeakBundle:Default:index }
+
+iit_all_speak_survey:
+    path:     /survey
+    defaults: { _controller: IITAllSpeakBundle:Default:survey }
+
