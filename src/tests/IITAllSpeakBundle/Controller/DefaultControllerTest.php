@@ -14,4 +14,14 @@ class DefaultControllerTest extends WebTestCase
 
         $this->assertContains('Hello World', $client->getResponse()->getContent());
     }
+
+    public function testSurvey()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/survey');
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals(1, $crawler->filter('iframe')->count());
+    }
 }
