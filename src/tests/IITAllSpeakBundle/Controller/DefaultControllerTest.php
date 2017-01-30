@@ -12,7 +12,8 @@ class DefaultControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/');
 
-        $this->assertContains('Hello World', $client->getResponse()->getContent());
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals('All Speak', $crawler->filter('h1')->text());
     }
 
     public function testSurveyUnauthenticated()
