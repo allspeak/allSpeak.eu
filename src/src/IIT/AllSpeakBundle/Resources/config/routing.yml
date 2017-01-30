@@ -6,3 +6,10 @@ iit_all_speak_survey:
     path:     /survey
     defaults: { _controller: IITAllSpeakBundle:Default:survey }
 
+login:
+    path:     /login
+    defaults: { _controller: IITAllSpeakBundle:Security:login }
+
+logout:
+    path:     /logout
+

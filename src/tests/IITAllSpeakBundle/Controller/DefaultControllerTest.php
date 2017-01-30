@@ -15,12 +15,25 @@ class DefaultControllerTest extends WebTestCase
         $this->assertContains('Hello World', $client->getResponse()->getContent());
     }
 
-    public function testSurvey()
+    public function testSurveyUnauthenticated()
     {
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/survey');
 
-        $this->assertEquals(500, $client->getResponse()->getStatusCode());
+        $this->assertEquals(302, $client->getResponse()->getStatusCode());
+    }
+
+    public function testSurveyAuthenticated()
+    {
+        $client = static::createClient([], [
+            'PHP_AUTH_USER' => 'test',
+            'PHP_AUTH_PW'   => 'test',
+        ]);
+
+        $crawler = $client->request('GET', '/survey');
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals(1, $crawler->filter('iframe')->count());
     }
 }

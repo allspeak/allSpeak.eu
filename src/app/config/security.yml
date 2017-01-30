@@ -5,7 +5,11 @@ security:
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         in_memory:
-            memory: ~
+            memory:
+                users:
+                    test:
+                        password: test
+                        roles: 'ROLE_SURVEYTAKER'
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -20,9 +24,18 @@ security:
             # http_basic: ~
             # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
 
-            # form_login: ~
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+            form_login:
+                login_path: login
+                check_path: login
+
+            logout:
+                path: /logout
+                target: /
+                invalidate_session: false
 
     access_control:
         # require ROLE_ADMIN for /admin*
         - { path: ^/survey$, roles: ROLE_SURVEYTAKER }
+
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
