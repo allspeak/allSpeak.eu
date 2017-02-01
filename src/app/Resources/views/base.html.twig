@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8" />
         <title>{% block title %}All Speak{% endblock %}</title>
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, maximum-scale=1"
+              charset="UTF-8" />
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div id="wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <a href="{{ url('homepage') }}">
+                            All speak
+                        </a>
+                    </div>
+                    <div class="col-sm-5 text-right">
+                        {% if app.user %}
+                            <a href="{{ url('survey') }}">
+                                Survey
+                            </a>
+                            <a href="{{ url('logout') }}">
+                                Logout
+                            </a>
+                        {% else %}
+                            <a href="{{ url('login') }}">
+                                Login
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% block body %}{% endblock %}
+            </div>
+        </div>
         <script src="{{ asset('dist/bundle.js') }}"></script>
         {% block javascripts %}
         {% endblock %}
