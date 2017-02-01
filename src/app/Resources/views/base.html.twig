@@ -8,6 +8,8 @@
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <script src="{{ asset('dist/bundle.js') }}"></script>
+        {% block javascripts %}
+        {% endblock %}
     </body>
 </html>
