@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="row">
-        <div class="col-sm-offset-1 col-sm-10" >
-            <h1 class="text-center">All Speak</h1>
-
-            <p>
+    <div class="row index">
+        <div class="col-sm-offset-1 col-sm-10">
+            <h2 class="text-center">Il progetto</h2>
+            <div>
+                <p>
                 AllSpeak è un progetto in fase di realizzazione presso l’Unità Robotics, Brain and Cognitive
                 Sciences (RBCS)
                 dell’Istituto Italiano di Tecnologia (IIT) di Genova. Il progetto è stato finanziato dalla
@@ -15,8 +15,10 @@
                 Challenge 2015, promossa ad organizzata dall’Associazione Italiana Sclerosi Laterale Amiotrofica
                 (AISLA),
                 http://www.arisla.org/wp-content/uploads/2015/12/ALLSpeak.pdf.
-            </p>
-            <p>
+                </p>
+            </div>
+            <div>
+                <p>
                 AllSpeak sarà un App per smartphone Android in grado di aiutare il paziente SLA a comunicare
                 verbalmente i
                 propri bisogni primari. L’App funzionerà secondo due modalità: come amplificatore della voce del
@@ -28,8 +30,10 @@
                 Learning ivi inclusi e tramite delle periodiche sessioni di addestramento, al termine delle quali,
                 il software
                 avrà adattato la propria base dati al progressivo deterioramento della voce dei pazienti.
-            </p>
-            <p>
+                </p>
+            </div>
+            <div>
+                <p>
                 Caratteristica peculiare dell’App sarà quindi la possibilità di riconoscere solo ed esclusivamente
                 quelle frasi che un determinato soggetto avrà addestrato. Obiettivo del progetto è quello quindi di
                 permettere
@@ -40,17 +44,24 @@
                 Centro SLA dell’Ospedale San Raffaele di Milano, e poi distribuita gratuitamente attraverso il consueto
                 canale
                 Play Store di Google.
-            <p>
+                </p>
+            </div>
+            <div>
+                <p>
                 Prevediamo di essere poter distribuire l’App dopo il secondo trimestre del 2018.
-            </p>
-            </p>
-            <p>
+                </p>
+            </div>
+            <div>
+                <p>
                 Per qualunque necessità, non esitate a contattare il responsabile del progetto al seguente
                 indirizzo:
                 info@allspeak.it
-            </p>
-
-            Partecipanti al progetto:
+                </p>
+            </div>
+            <div>
+                <p>
+                Partecipanti al progetto:
+                </p>
             <ul>
                 <li>
                     Ing. Alberto Inuggi: Investigatore principale del progetto (IIT)
@@ -68,7 +79,27 @@
                     Dr. Federico Bozzini: sviluppatore WEB
                 </li>
             </ul>
-
+            </div>
+            <div class="row partners-section">
+            <h4>Partners</h4>
+            <div class="row partners">
+                <div class="col-xs-4 col-md-3">
+                    <a href="http://www.arisla.org/" class="thumbnail">
+                        <img src="{{ asset('dist/img/arislaLogo.jpg') }}" alt="Logo Arisla">
+                    </a>
+                </div>
+                <div class="col-xs-4 col-md-3">
+                    <a href="http://iit.it" class="thumbnail">
+                        <img src="{{ asset('dist/img/iitLogo.jpg') }}" alt="Logo IIT">
+                    </a>
+                </div>
+                <div class="col-xs-4 col-md-3">
+                    <a href="http://www.hsr.it/" class="thumbnail">
+                        <img src="{{ asset('dist/img/osrLogo.jpg') }}" alt="Logo OSR">
+                    </a>
+                </div>
+            </div>
+            </div>
         </div>
     </div>
 {% endblock %}

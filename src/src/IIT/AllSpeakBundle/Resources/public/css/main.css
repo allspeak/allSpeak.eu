@@ -1,0 +1,25 @@
+/* Menu */
+
+.menu {
+    height: 50px;
+}
+
+.menu .entry {
+    margin-left: 10px;
+    vertical-align: bottom;
+    font-size: 20px;
+    height: 50px;
+    display: inline-block;
+}
+
+.partners-section {
+    margin-top: 30px;
+}
+
+.partners img {
+    max-height: 100px;
+}
+
+.index p {
+    text-align: justify;
+}

@@ -1,7 +1,8 @@
 var path = require('path');
 
 module.exports = {
-    entry: './src/IIT/AllSpeakBundle/Resources/public/js/index.js',
+    context: path.resolve(__dirname, './src/IIT/AllSpeakBundle/Resources/public/'),
+    entry: './js/index.js',
     output: {
         path: path.resolve(__dirname, './web/dist'),
         filename: 'bundle.js'
@@ -19,10 +20,6 @@ module.exports = {
             {
                 test: /\.css$/,
                 loader: "style-loader!css-loader"
-            },
-            {
-                test: /\.png$/,
-                loader: "url-loader?limit=100000"
             },
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,

@@ -11,22 +11,22 @@
     <body>
         <div id="wrapper">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-7">
+                <div class="row menu">
+                    <div class="col-xs-7">
                         <a href="{{ url('homepage') }}">
-                            All speak
+                            <img src="{{ asset('dist/img/allSpeakLogo.jpg') }}" width="83px" heigth="50px" />
                         </a>
                     </div>
-                    <div class="col-sm-5 text-right">
+                    <div class="col-xs-5 text-right">
                         {% if app.user %}
-                            <a href="{{ url('survey') }}">
+                            <a class="entry" href="{{ url('survey') }}">
                                 Survey
                             </a>
-                            <a href="{{ url('logout') }}">
+                            <a class="entry" href="{{ url('logout') }}">
                                 Logout
                             </a>
                         {% else %}
-                            <a href="{{ url('login') }}">
+                            <a class="entry" href="{{ url('login') }}">
                                 Login
                             </a>
                         {% endif %}
