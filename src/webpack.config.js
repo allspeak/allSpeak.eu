@@ -9,13 +9,13 @@ module.exports = {
     module: {
         loaders: [
             {
-            test: /.js?$/,
-            loader: 'babel-loader',
-            exclude: /node_modules/,
-            query: {
-                presets: ['es2015']
-            }
-        },
+                test: /.js?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: {
+                    presets: ['es2015']
+                }
+            },
             {
                 test: /\.css$/,
                 loader: "style-loader!css-loader"
@@ -25,8 +25,8 @@ module.exports = {
                 loader: "url-loader?limit=100000"
             },
             {
-                test: /\.jpg$/,
-                loader: "file-loader"
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                loader: "file-loader?name=img/[name].[ext]"
             },
             {
                 test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
