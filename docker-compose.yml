@@ -9,14 +9,13 @@ services:
             - ./docker/mysql/:/var/lib/mysql
         environment:
             MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: symfony
             MYSQL_USER: symfony
             MYSQL_PASSWORD: symfony
     php:
         build: ./docker/php-dev
         restart: always
         volumes:
-            - ./src:/code
+            - ./src:/var/www/html
         links:
             - db
     nginx:
