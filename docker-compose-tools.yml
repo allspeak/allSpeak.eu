@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+  composer:
+    image: composer/composer:1.1-alpine
+    volumes:
+      - ./src:/app
