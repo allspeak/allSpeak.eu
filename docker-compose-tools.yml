@@ -5,3 +5,8 @@ services:
     image: composer/composer:1.1-alpine
     volumes:
       - ./src:/app
+  phpunit:
+    image: phpunit/phpunit:5.7.5
+    volumes:
+      - ./src:/app
+    command: [""]
