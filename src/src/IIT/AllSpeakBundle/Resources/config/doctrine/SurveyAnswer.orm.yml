@@ -1,0 +1,41 @@
+IIT\AllSpeakBundle\Entity\SurveyAnswer:
+    type: entity
+    table: null
+    repositoryClass: IIT\AllSpeakBundle\Repository\SurveyAnswerRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        ts:
+            type: datetime
+        gender:
+            type: string
+            length: '10'
+        birthYear:
+            type: smallint
+            nullable: true
+        diagnosisYear:
+            type: smallint
+            nullable: true
+        alsfrsr:
+            type: smallint
+        verbalScore:
+            type: smallint
+        diagnosis:
+            type: string
+            length: '1'
+    manyToMany:
+        sentences:
+          targetEntity: SurveySentence
+          joinTable:
+            name: answers_sentences
+            joinColumns:
+              answer_id:
+                referencedColumnName: id
+            inverseJoinColumns:
+              sentence_id:
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

@@ -1,0 +1,16 @@
+IIT\AllSpeakBundle\Entity\SurveySentence:
+    type: entity
+    table: null
+    repositoryClass: IIT\AllSpeakBundle\Repository\SurveySentenceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        text:
+            type: string
+            length: 255
+            unique: true
+    lifecycleCallbacks: {  }
