@@ -6,6 +6,10 @@ survey:
     path:     /survey
     defaults: { _controller: IITAllSpeakBundle:Default:survey }
 
+survey_completed:
+    path:     /survey-completed
+    defaults: { _controller: IITAllSpeakBundle:Default:surveyCompleted }
+
 login:
     path:     /login
     defaults: { _controller: IITAllSpeakBundle:Security:login }
