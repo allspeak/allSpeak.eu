@@ -98,6 +98,19 @@ class DefaultController extends Controller
 
     public function surveyCompletedAction(Request $request)
     {
-        return $this->render('IITAllSpeakBundle:Default:surveyCompleted.html.twig');
+        $view = 'IITAllSpeakBundle:Default:surveyCompleted.html.twig';
+        $redirectUrl = '/';
+        return $this->renderWithRedirect($view, [], $redirectUrl);
+    }
+
+    private function renderWithRedirect($view, $parameters, $redirectUrl, $seconds=3)
+    {
+        $response = new Response;
+        $htmlContent = $this->container->get('twig')->render($view, $parameters);
+
+        $response->headers->set('Refresh', $seconds.'; url='. $redirectUrl);
+        $response->setContent($htmlContent);
+
+        return $response;
     }
 }
