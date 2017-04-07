@@ -10,6 +10,12 @@ class LoadSurveySentences implements FixtureInterface
 {
     public function load(ObjectManager $manager)
     {
+
+        $sentencesRepository = $manager->getRepository('IITAllSpeakBundle:SurveySentence');
+        $surveySentencesCount = $sentencesRepository->count();
+        if ($surveySentencesCount > 0)
+            return;
+
         $sentences = [
             'Ho fame',
             'Ho sete',

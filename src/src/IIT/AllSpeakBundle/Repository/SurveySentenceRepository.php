@@ -10,4 +10,12 @@ namespace IIT\AllSpeakBundle\Repository;
  */
 class SurveySentenceRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function count()
+    {
+        $qb = $this->createQueryBuilder('s');
+        return $qb
+            ->select('count(s.id)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
 }
