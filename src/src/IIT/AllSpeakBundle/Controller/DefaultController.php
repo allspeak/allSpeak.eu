@@ -34,10 +34,8 @@ class DefaultController extends Controller
         $birthYearChoices = range($minBirthYear, $currentYear);
         $diagnosisYearChoices = range($minDiagnosisYear, $currentYear);
         $diagnosisChoices = [
-            'A' => 'A',
-            'B' => 'B',
-            'C' => 'C',
-            'D' => 'D',
+            'Spinale' => 'S',
+            'Bulbare' => 'B'
         ];
         $useValueAsLabel = function($value, $key, $index) {return $value;};
         $form = $this->createFormBuilder($surveyAnswer)
