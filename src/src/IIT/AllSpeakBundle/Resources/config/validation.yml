@@ -1,0 +1,46 @@
+IIT\AllSpeakBundle\Entity\SurveyAnswer:
+    properties:
+        ts:
+            - NotNull:
+        gender:
+            - Choice:
+                choices:  [M, F]
+                message:  Genere non valido
+        birthYear:
+            - Range:
+                  min: 1940
+                  max: 2050
+                  minMessage: L'anno di nascita dev'essere maggiore di {{ limit }}
+                  maxMessage: L'anno di nascita dev'essere minore dell'anno corrente
+        diagnosisYear:
+            - Range:
+                  min: 1980
+                  max: 2050
+                  minMessage: L'anno di diagnosi dev'essere maggiore di {{ limit }}
+                  maxMessage: L'anno di diagnosi dev'essere minore dell'anno corrente
+        alsfrsr:
+            - NotNull:
+                message: Il campo alsfrs-r non puo' essere lasciato vuoto
+            - Range:
+                  min: 0
+                  max: 40
+                  minMessage: L'alsfrs-r dev'essere maggiore di {{ limit }}
+                  maxMessage: L'alsfrs-r dev'essere non piu' di {{ limit }}
+        verbalScore:
+            - NotNull:
+                message: Il campo score verbale non puo' essere lasciato vuoto
+            - Range:
+                  min: 0
+                  max: 4
+                  minMessage: Lo score verbale dev'essere maggiore di {{ limit }}
+                  maxMessage: Lo score verbale dev'essere non piu' di {{ limit }}
+        diagnosis:
+            - Choice:
+                choices:  [S, B]
+                message:  Diagnosi non valida
+        sentences:
+            - Count:
+                  min: 1
+                  max: 5
+                  minMessage: "E' necessario specificare almeno una frase"
+                  maxMessage: "Non e' possibile specificare piu' di {{ limit }} frasi"
