@@ -6,6 +6,14 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class DefaultControllerTest extends WebTestCase
 {
+    private $container;
+
+    public function setUp()
+    {
+        self::bootKernel();
+        $this->container = self::$kernel->getContainer();
+    }
+
     public function testIndex()
     {
         $client = static::createClient();
@@ -27,9 +35,11 @@ class DefaultControllerTest extends WebTestCase
 
     public function testSurveyAuthenticated()
     {
+        $surveyTakerPassword = $this->container->getParameter('surveytaker_password');
+
         $client = static::createClient([], [
-            'PHP_AUTH_USER' => 'test',
-            'PHP_AUTH_PW'   => 'test',
+            'PHP_AUTH_USER' => 'surveytaker',
+            'PHP_AUTH_PW'   => $surveyTakerPassword,
         ]);
 
         $crawler = $client->request('GET', '/survey');

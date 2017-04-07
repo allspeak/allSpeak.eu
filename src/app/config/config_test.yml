@@ -17,5 +17,5 @@ swiftmailer:
 
 security:
     firewalls:
-        main:
+        survey:
             http_basic: ~

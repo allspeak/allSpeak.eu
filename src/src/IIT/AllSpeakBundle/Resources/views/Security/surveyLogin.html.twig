@@ -7,15 +7,14 @@
                 <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
 
-            <form action="{{ path('login') }}" method="post" role="login">
+            <form action="{{ path('survey_login') }}" method="post" role="login">
                 <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="_username"
+                    <input type="hidden" id="username" name="_username"
                            class="form-control input-md"
-                           value="{{ last_username }}" />
+                           value="surveytaker" />
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
+                    <label for="password">Codice di accesso</label>
                     <input type="password" id="password" name="_password"
                            class="form-control input-md"/>
                 </div>

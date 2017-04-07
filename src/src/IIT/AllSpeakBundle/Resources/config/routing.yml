@@ -10,9 +10,9 @@ survey_completed:
     path:     /survey-completed
     defaults: { _controller: IITAllSpeakBundle:Default:surveyCompleted }
 
-login:
-    path:     /login
-    defaults: { _controller: IITAllSpeakBundle:Security:login }
+survey_login:
+    path:     /survey_login
+    defaults: { _controller: IITAllSpeakBundle:Security:surveyLogin }
 
 logout:
     path:     /logout
