@@ -10,3 +10,8 @@ services:
     volumes:
       - ./src:/app
     command: [""]
+  webpack:
+    build: ./docker/node
+    volumes:
+      - ./src:/app
+    entrypoint: ["webpack"]
