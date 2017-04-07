@@ -23,3 +23,15 @@
 .index p {
     text-align: justify;
 }
+
+/* Survey */
+
+.survey #form_sentences .checkbox {
+    display: inline-block;
+    margin-right: 25px;
+    background-color: #f6f6f6;
+    padding: 1px 3px;
+    border: solid #e6eaef 1px;
+    border-radius: 5px;
+    user-select: none;
+}
