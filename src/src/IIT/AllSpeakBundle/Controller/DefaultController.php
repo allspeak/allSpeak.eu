@@ -5,7 +5,7 @@ namespace IIT\AllSpeakBundle\Controller;
 use IIT\AllSpeakBundle\Entity\SurveyAnswer;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -53,10 +53,10 @@ class DefaultController extends Controller
                 'choices' => $diagnosisYearChoices,
                 'choice_label' => $useValueAsLabel
             ])
-            ->add('alsfrsr', NumberType::class, [
+            ->add('alsfrsr', IntegerType::class, [
                 'label' => 'ALSFR-R'
             ])
-            ->add('verbalScore', NumberType ::class, [
+            ->add('verbalScore', IntegerType ::class, [
                 'label' => 'Score verbale'
             ])
             ->add('diagnosis', ChoiceType::class, [
