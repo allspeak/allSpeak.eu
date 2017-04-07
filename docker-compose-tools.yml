@@ -15,3 +15,8 @@ services:
     volumes:
       - ./src:/app
     entrypoint: ["webpack"]
+  npm:
+    build: ./docker/node
+    volumes:
+      - ./src:/app
+    entrypoint: ["npm"]
