@@ -3,7 +3,7 @@
 {% block body %}
     <div class="row survey">
         <div class="col-sm-offset-1 col-sm-10">
-            {{ form_start(form) }}
+            {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
             {{ form_widget(form) }}
             {{ form_end(form) }}
         </div>
