@@ -22,13 +22,10 @@ class DefaultController extends Controller
     {
         $surveyAnswer = new SurveyAnswer();
 
-        $sentencesRepository = $this->getDoctrine()->getRepository('IITAllSpeakBundle:SurveySentence');
-
         $genderChoices = [
             'Maschio' => 'M',
             'Femmina' => 'F'
         ];
-        $surveySentences = $sentencesRepository->findAll();
         $currentYear = date("Y");
         $minBirthYear = 1940;
         $minDiagnosisYear = 1980;
@@ -69,7 +66,7 @@ class DefaultController extends Controller
                 'class' => 'IITAllSpeakBundle:SurveySentence',
                 'multiple' => true,
                 'expanded' => true,
-                'choice_label' => 'getText'
+                'choice_label' => 'text'
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Conferma'
