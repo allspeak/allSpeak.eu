@@ -1,6 +1,7 @@
 <?php
 
 namespace IIT\AllSpeakBundle\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * SurveyAnswer
@@ -244,7 +245,7 @@ class SurveyAnswer
      *
      * @return SurveyAnswer
      */
-    public function setSentences(array $sentences)
+    public function setSentences(ArrayCollection $sentences)
     {
         $this->sentences = $sentences;
 

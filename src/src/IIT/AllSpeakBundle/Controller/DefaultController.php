@@ -5,6 +5,7 @@ namespace IIT\AllSpeakBundle\Controller;
 use IIT\AllSpeakBundle\Entity\SurveyAnswer;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
@@ -63,13 +64,12 @@ class DefaultController extends Controller
                 'label' => 'Diagnosi',
                 'choices' => $diagnosisChoices
             ])
-            ->add('sentences', ChoiceType::class, [
+            ->add('sentences', EntityType::class, [
                 'label' => "Selezionare le frasi piu' importanti",
+                'class' => 'IITAllSpeakBundle:SurveySentence',
                 'multiple' => true,
                 'expanded' => true,
-                'choices' => $surveySentences,
-                'choice_label' => 'getText',
-                'choice_value' => 'getId'
+                'choice_label' => 'getText'
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Conferma'
