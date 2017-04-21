@@ -22,6 +22,11 @@ class DefaultControllerTest extends WebTestCase
         return $client;
     }
 
+    private function selectChoices(array $formField, $indexes) {
+        foreach($indexes as $i)
+            $formField[$i]->tick();
+    }
+
     public function setUp()
     {
         self::bootKernel();
@@ -106,11 +111,7 @@ class DefaultControllerTest extends WebTestCase
         $form['form[alsfrsr]'] = '34';
         $form['form[verbalScore]'] = '3';
         $form['form[diagnosis]'] = 'S';
-        $form['form[sentences][0]'] = '12';
-        $form['form[sentences][1]'] = '11';
-        $form['form[sentences][2]'] = '8';
-        $form['form[sentences][3]'] = '10';
-
+        $this->selectChoices($form['form[sentences]'], [0,1,2]);
         $crawler = $client->submit($form);
 
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
