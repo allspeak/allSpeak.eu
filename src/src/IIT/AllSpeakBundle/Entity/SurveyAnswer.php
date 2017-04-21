@@ -29,9 +29,9 @@ class SurveyAnswer
     private $birthYear;
 
     /**
-     * @var int
+     * @var \DateTime
      */
-    private $diagnosisYear;
+    private $diagnosisDate;
 
     /**
      * @var int
@@ -143,27 +143,27 @@ class SurveyAnswer
     }
 
     /**
-     * Set diagnosisYear
+     * Set diagnosisDate
      *
-     * @param integer $diagnosisYear
+     * @param \DateTime $diagnosisDate
      *
      * @return SurveyAnswer
      */
-    public function setDiagnosisYear($diagnosisYear)
+    public function setDiagnosisDate($diagnosisDate)
     {
-        $this->diagnosisYear = $diagnosisYear;
+        $this->diagnosisDate = $diagnosisDate;
 
         return $this;
     }
 
     /**
-     * Get diagnosisYear
+     * Get diagnosisDate
      *
-     * @return int
+     * @return \DateTime
      */
-    public function getDiagnosisYear()
+    public function getDiagnosisDate()
     {
-        return $this->diagnosisYear;
+        return $this->diagnosisDate;
     }
 
     /**

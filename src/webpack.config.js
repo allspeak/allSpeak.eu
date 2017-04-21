@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
     context: path.resolve(__dirname, './src/IIT/AllSpeakBundle/Resources/public/'),
@@ -42,6 +43,12 @@ module.exports = {
                 loader: 'url?limit=10000&mimetype=image/svg+xml'
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })
+    ]
 };
 

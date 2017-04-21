@@ -6,6 +6,7 @@ use IIT\AllSpeakBundle\Entity\SurveyAnswer;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
@@ -42,10 +43,11 @@ class DefaultController extends Controller
             ->add('birthYear', IntegerType::class, [
                 'label' => 'Anno di nascita (formato YYYY, eg: 1970)'
             ])
-            ->add('diagnosisYear', ChoiceType::class, [
-                'label' => 'Anno di diagnosi',
-                'choices' => $diagnosisYearChoices,
-                'choice_label' => $useValueAsLabel
+            ->add('diagnosisDate', DateType::class, [
+                'label' => 'Periodo di diagnosi',
+                'widget' => 'single_text',
+                'html5' => false,
+                'attr' => ['class' => 'js-datepicker'],
             ])
             ->add('alsfrsr', IntegerType::class, [
                 'label' => 'ALSFRS-R'

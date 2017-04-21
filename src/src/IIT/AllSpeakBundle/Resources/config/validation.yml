@@ -13,12 +13,8 @@ IIT\AllSpeakBundle\Entity\SurveyAnswer:
                   max: 2050
                   minMessage: L'anno di nascita dev'essere maggiore di {{ limit }}
                   maxMessage: L'anno di nascita dev'essere minore dell'anno corrente
-        diagnosisYear:
-            - Range:
-                  min: 1980
-                  max: 2050
-                  minMessage: L'anno di diagnosi dev'essere maggiore di {{ limit }}
-                  maxMessage: L'anno di diagnosi dev'essere minore dell'anno corrente
+        diagnosisDate:
+            - Date: ~
         alsfrsr:
             - NotNull:
                 message: Il campo alsfrs-r non puo' essere lasciato vuoto

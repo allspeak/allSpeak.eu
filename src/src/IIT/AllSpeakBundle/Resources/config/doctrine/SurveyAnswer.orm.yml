@@ -17,8 +17,8 @@ IIT\AllSpeakBundle\Entity\SurveyAnswer:
         birthYear:
             type: smallint
             nullable: true
-        diagnosisYear:
-            type: smallint
+        diagnosisDate:
+            type: datetime
             nullable: true
         alsfrsr:
             type: smallint

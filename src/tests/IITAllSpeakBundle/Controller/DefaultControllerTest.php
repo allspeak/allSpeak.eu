@@ -107,7 +107,7 @@ class DefaultControllerTest extends WebTestCase
         $form = $crawler->selectButton('Conferma')->form();
         $form['form[gender]'] = 'F';
         $form['form[birthYear]'] = '1946';
-        $form['form[diagnosisYear]'] = '1985';
+        $form['form[diagnosisDate]'] = '2005-04-01';
         $form['form[alsfrsr]'] = '34';
         $form['form[communicationFunction]'] = '3';
         $form['form[diagnosis]'] = 'S';
