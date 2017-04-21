@@ -52,7 +52,7 @@ class DefaultController extends Controller
                 'choice_label' => $useValueAsLabel
             ])
             ->add('alsfrsr', IntegerType::class, [
-                'label' => 'ALSFR-R'
+                'label' => 'ALSFRS-R'
             ])
             ->add('verbalScore', IntegerType ::class, [
                 'label' => 'Score verbale'
