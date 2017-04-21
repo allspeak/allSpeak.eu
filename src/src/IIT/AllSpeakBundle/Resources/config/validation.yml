@@ -6,6 +6,7 @@ IIT\AllSpeakBundle\Entity\SurveyAnswer:
             - Choice:
                 choices:  [M, F]
                 message:  Genere non valido
+                strict: true
         birthYear:
             - Range:
                   min: 1940
@@ -38,6 +39,7 @@ IIT\AllSpeakBundle\Entity\SurveyAnswer:
             - Choice:
                 choices:  [S, B]
                 message:  Diagnosi non valida
+                strict: true
         sentences:
             - Count:
                   min: 1
