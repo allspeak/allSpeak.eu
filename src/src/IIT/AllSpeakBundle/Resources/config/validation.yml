@@ -21,16 +21,16 @@ IIT\AllSpeakBundle\Entity\SurveyAnswer:
             - Range:
                   min: 0
                   max: 40
-                  minMessage: L'alsfrs-r dev'essere maggiore di {{ limit }}
-                  maxMessage: L'alsfrs-r dev'essere non piu' di {{ limit }}
+                  minMessage: L'alsfrs-r dev'essere maggiore o uguale a {{ limit }}
+                  maxMessage: L'alsfrs-r dev'essere minore o uguale a {{ limit }}
         communicationFunction:
             - NotNull:
                 message: Il campo funzione comunicativa non puo' essere lasciato vuoto
             - Range:
                   min: 0
                   max: 4
-                  minMessage: Il valore del campo funzione comunicativa dev'essere maggiore di {{ limit }}
-                  maxMessage: Il valore del campo funzione comunicativa  dev'essere non piu' di {{ limit }}
+                  minMessage: Il valore del campo funzione comunicativa dev'essere maggiore o uguale a {{ limit }}
+                  maxMessage: Il valore del campo funzione comunicativa dev'essere minore o uguale a {{ limit }}
         diagnosis:
             - Choice:
                 choices:  [S, B]
@@ -40,5 +40,5 @@ IIT\AllSpeakBundle\Entity\SurveyAnswer:
             - Count:
                   min: 1
                   max: 10
-                  minMessage: "E' necessario specificare almeno una frase"
-                  maxMessage: "Non e' possibile specificare piu' di {{ limit }} frasi"
+                  minMessage: E' necessario specificare almeno una frase
+                  maxMessage: Non e' possibile specificare piu' di {{ limit }} frasi

@@ -50,10 +50,10 @@ class DefaultController extends Controller
                 'attr' => ['class' => 'js-datepicker'],
             ])
             ->add('alsfrsr', IntegerType::class, [
-                'label' => 'ALSFRS-R'
+                'label' => 'ALSFRS-R (min:0, max:40)'
             ])
             ->add('communicationFunction', IntegerType::class, [
-                'label' => 'Funzione comunicativa'
+                'label' => 'Funzione comunicativa (min:0, max:4)'
             ])
             ->add('diagnosis', ChoiceType::class, [
                 'label' => 'Diagnosi',
