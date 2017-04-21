@@ -27,9 +27,7 @@ class DefaultController extends Controller
             'Femmina' => 'F'
         ];
         $currentYear = date("Y");
-        $minBirthYear = 1940;
         $minDiagnosisYear = 1980;
-        $birthYearChoices = range($minBirthYear, $currentYear);
         $diagnosisYearChoices = range($minDiagnosisYear, $currentYear);
         $diagnosisChoices = [
             'Spinale' => 'S',
@@ -41,10 +39,8 @@ class DefaultController extends Controller
                 'label' => 'Genere',
                 'choices' => $genderChoices
             ])
-            ->add('birthYear', ChoiceType::class, [
-                'label' => 'Anno di nascita',
-                'choices' => $birthYearChoices,
-                'choice_label' => $useValueAsLabel
+            ->add('birthYear', IntegerType::class, [
+                'label' => 'Anno di nascita (formato YYYY, eg: 1970)'
             ])
             ->add('diagnosisYear', ChoiceType::class, [
                 'label' => 'Anno di diagnosi',
