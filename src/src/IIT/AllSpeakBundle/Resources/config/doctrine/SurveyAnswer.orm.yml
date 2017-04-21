@@ -22,7 +22,7 @@ IIT\AllSpeakBundle\Entity\SurveyAnswer:
             nullable: true
         alsfrsr:
             type: smallint
-        verbalScore:
+        communicationFunction:
             type: smallint
         diagnosis:
             type: string

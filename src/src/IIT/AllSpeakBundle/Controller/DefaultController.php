@@ -54,8 +54,8 @@ class DefaultController extends Controller
             ->add('alsfrsr', IntegerType::class, [
                 'label' => 'ALSFRS-R'
             ])
-            ->add('verbalScore', IntegerType ::class, [
-                'label' => 'Score verbale'
+            ->add('communicationFunction', IntegerType::class, [
+                'label' => 'Funzione comunicativa'
             ])
             ->add('diagnosis', ChoiceType::class, [
                 'label' => 'Diagnosi',

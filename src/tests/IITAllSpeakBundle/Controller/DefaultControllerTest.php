@@ -109,7 +109,7 @@ class DefaultControllerTest extends WebTestCase
         $form['form[birthYear]'] = '1946';
         $form['form[diagnosisYear]'] = '1985';
         $form['form[alsfrsr]'] = '34';
-        $form['form[verbalScore]'] = '3';
+        $form['form[communicationFunction]'] = '3';
         $form['form[diagnosis]'] = 'S';
         $this->selectChoices($form['form[sentences]'], [0,1,2]);
         $crawler = $client->submit($form);

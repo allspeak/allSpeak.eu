@@ -41,7 +41,7 @@ class SurveyAnswer
     /**
      * @var int
      */
-    private $verbalScore;
+    private $communicationFunction;
 
     /**
      * @var string
@@ -191,27 +191,27 @@ class SurveyAnswer
     }
 
     /**
-     * Set verbalScore
+     * Set communicationFunction
      *
-     * @param integer $verbalScore
+     * @param integer $communicationFunction
      *
      * @return SurveyAnswer
      */
-    public function setVerbalScore($verbalScore)
+    public function setCommunicationFunction($communicationFunction)
     {
-        $this->verbalScore = $verbalScore;
+        $this->communicationFunction = $communicationFunction;
 
         return $this;
     }
 
     /**
-     * Get verbalScore
+     * Get communicationFunction
      *
      * @return int
      */
-    public function getVerbalScore()
+    public function getCommunicationFunction()
     {
-        return $this->verbalScore;
+        return $this->communicationFunction;
     }
 
     /**
