@@ -41,6 +41,6 @@ IIT\AllSpeakBundle\Entity\SurveyAnswer:
         sentences:
             - Count:
                   min: 1
-                  max: 5
+                  max: 10
                   minMessage: "E' necessario specificare almeno una frase"
                   maxMessage: "Non e' possibile specificare piu' di {{ limit }} frasi"

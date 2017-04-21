@@ -62,7 +62,7 @@ class DefaultController extends Controller
                 'choices' => $diagnosisChoices
             ])
             ->add('sentences', EntityType::class, [
-                'label' => "Selezionare le frasi piu' importanti",
+                'label' => "Selezionare le frasi piu' importanti (min:1, max:10)",
                 'class' => 'IITAllSpeakBundle:SurveySentence',
                 'multiple' => true,
                 'expanded' => true,
