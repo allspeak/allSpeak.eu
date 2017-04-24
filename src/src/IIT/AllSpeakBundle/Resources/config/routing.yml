@@ -6,6 +6,10 @@ survey:
     path:     /survey
     defaults: { _controller: IITAllSpeakBundle:Default:survey }
 
+admin:
+    path:     /admin
+    defaults: { _controller: IITAllSpeakBundle:Default:admin }
+
 survey_completed:
     path:     /survey-completed
     defaults: { _controller: IITAllSpeakBundle:Default:surveyCompleted }
@@ -14,6 +18,13 @@ survey_login:
     path:     /survey_login
     defaults: { _controller: IITAllSpeakBundle:Security:surveyLogin }
 
+login:
+    path:     /login
+    defaults: { _controller: IITAllSpeakBundle:Security:login }
+
 logout:
     path:     /logout
+
+survey_logout:
+    path:     /survey_logout
 

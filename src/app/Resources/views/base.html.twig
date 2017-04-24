@@ -18,16 +18,15 @@
                         </a>
                     </div>
                     <div class="col-xs-5 text-right">
+                        <a class="entry" href="{{ url('admin') }}">
+                            Admin
+                        </a>
+                        <a class="entry" href="{{ url('survey') }}">
+                            Survey
+                        </a>
                         {% if app.user %}
-                            <a class="entry" href="{{ url('survey') }}">
-                                Survey
-                            </a>
-                            <a class="entry" href="{{ url('logout') }}">
+                            <a class="entry" href="{{ logout_path() }}">
                                 Logout
-                            </a>
-                        {% else %}
-                            <a class="entry" href="{{ url('survey') }}">
-                                Survey
                             </a>
                         {% endif %}
                     </div>

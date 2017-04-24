@@ -96,6 +96,12 @@ class DefaultController extends Controller
         return $this->renderWithRedirect($view, [], $redirectUrl);
     }
 
+    public function adminAction(Request $request)
+    {
+        return $this->render('IITAllSpeakBundle:Default:admin.html.twig');
+    }
+
+
     private function renderWithRedirect($view, $parameters, $redirectUrl, $seconds=3)
     {
         $response = new Response;

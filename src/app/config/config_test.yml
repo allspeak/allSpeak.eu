@@ -19,6 +19,8 @@ security:
     firewalls:
         survey:
             http_basic: ~
+        admin:
+            http_basic: ~
 
 doctrine:
     dbal:

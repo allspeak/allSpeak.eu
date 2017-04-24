@@ -22,6 +22,17 @@ class DefaultControllerTest extends WebTestCase
         return $client;
     }
 
+    private function getAdminClient() {
+        $adminPassword = $this->container->getParameter('admin_password');
+
+        $client = static::createClient([], [
+            'PHP_AUTH_USER' => 'admin',
+            'PHP_AUTH_PW'   => $adminPassword,
+        ]);
+
+        return $client;
+    }
+
     private function selectChoices(array $formField, $indexes) {
         foreach($indexes as $i)
             $formField[$i]->tick();
@@ -55,12 +66,12 @@ class DefaultControllerTest extends WebTestCase
 
     public function testSurveyUnauthenticated()
     {
-
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/survey');
 
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
+        $this->assertRegExp('/\/survey_login$/', $client->getResponse()->getTargetUrl());
     }
 
     public function testSurveyAuthenticated()
@@ -120,4 +131,25 @@ class DefaultControllerTest extends WebTestCase
         $surveyAnswers = $this->em->getRepository('IITAllSpeakBundle:SurveyAnswer')->findAll();
         $this->assertCount(1, $surveyAnswers);
     }
+
+    public function testAdminUnauthenticated()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/admin');
+
+        $this->assertEquals(302, $client->getResponse()->getStatusCode());
+        $this->assertRegExp('/\/login$/', $client->getResponse()->getTargetUrl());
+    }
+
+    public function testAdminAuthenticated()
+    {
+        $client = $this->getAdminClient();
+
+        $crawler = $client->request('GET', '/admin');
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals(1, $crawler->filter('h2')->count());
+    }
+
 }
