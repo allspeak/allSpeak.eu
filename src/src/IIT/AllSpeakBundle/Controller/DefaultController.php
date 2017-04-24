@@ -34,7 +34,9 @@ class DefaultController extends Controller
             'Spinale' => 'S',
             'Bulbare' => 'B'
         ];
-        $useValueAsLabel = function($value, $key, $index) {return $value;};
+        $useValueAsLabel = function ($value, $key, $index) {
+            return $value;
+        };
         $form = $this->createFormBuilder($surveyAnswer)
             ->add('gender', ChoiceType::class, [
                 'label' => 'Genere',
@@ -96,18 +98,28 @@ class DefaultController extends Controller
         return $this->renderWithRedirect($view, [], $redirectUrl);
     }
 
+    public function surveySummaryAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $surveySummary = $em->getRepository('IITAllSpeakBundle:SurveyAnswer')->getSurveySummary();
+
+        return $this->render('IITAllSpeakBundle:Default:surveySummary.html.twig', [
+            'surveySummary' => $surveySummary,
+        ]);
+    }
+
     public function adminAction(Request $request)
     {
         return $this->render('IITAllSpeakBundle:Default:admin.html.twig');
     }
 
 
-    private function renderWithRedirect($view, $parameters, $redirectUrl, $seconds=3)
+    private function renderWithRedirect($view, $parameters, $redirectUrl, $seconds = 3)
     {
         $response = new Response;
         $htmlContent = $this->container->get('twig')->render($view, $parameters);
 
-        $response->headers->set('Refresh', $seconds.'; url='. $redirectUrl);
+        $response->headers->set('Refresh', $seconds . '; url=' . $redirectUrl);
         $response->setContent($htmlContent);
 
         return $response;

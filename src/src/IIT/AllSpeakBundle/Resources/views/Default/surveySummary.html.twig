@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-10">
+            <h3>Survey summary</h3>
+            {% if not surveySummary %}
+                <p>The survey has not been taken by anyone yet.</p>
+            {% else %}
+                <div class="summary">
+                    <p>Number of survey answers: <span class="answer-num">{{ surveySummary.answersNum }}</span></p>
+                    <p>Male ratio: <span class="male-ratio">{{ surveySummary.maleRatio }}</span>% </p>
+                    <p>Average age: <span class="average-age">{{ surveySummary.averageAge }}</span></p>
+                    <p>Average time since diagnosis:
+                        <span class="since-diagnosis">
+                        {{ surveySummary.averageTimeSinceDiagnosis.format('%y years, %m months, %d days') }}
+                    </span>
+                    </p>
+                </div>
+            {% endif %}
+
+            <p><a href="{{ path('admin') }}">Back to admin panel</a></p>
+        </div>
+    </div>
+{% endblock %}

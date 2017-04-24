@@ -14,6 +14,10 @@ survey_completed:
     path:     /survey-completed
     defaults: { _controller: IITAllSpeakBundle:Default:surveyCompleted }
 
+surveySummary:
+    path:     /admin_survey_summary
+    defaults: { _controller: IITAllSpeakBundle:Default:surveySummary }
+
 survey_login:
     path:     /survey_login
     defaults: { _controller: IITAllSpeakBundle:Security:surveyLogin }

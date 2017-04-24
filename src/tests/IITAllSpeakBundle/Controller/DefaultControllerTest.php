@@ -84,6 +84,35 @@ class DefaultControllerTest extends WebTestCase
         $this->assertEquals(1, $crawler->filter('form')->count());
     }
 
+    public function testAdminUnauthenticated()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/admin');
+
+        $this->assertEquals(302, $client->getResponse()->getStatusCode());
+        $this->assertRegExp('/\/login$/', $client->getResponse()->getTargetUrl());
+
+        $crawler = $client->request('GET', '/admin_survey_summary');
+
+        $this->assertEquals(302, $client->getResponse()->getStatusCode());
+        $this->assertRegExp('/\/login$/', $client->getResponse()->getTargetUrl());
+    }
+
+    public function testAdminAuthenticated()
+    {
+        $client = $this->getAdminClient();
+
+        $crawler = $client->request('GET', '/admin');
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals(1, $crawler->filter('h2')->count());
+
+        $crawler = $client->request('GET', '/admin_survey_summary');
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+    }
+
     /**
      * @depends testSurveyAuthenticated
      */
@@ -104,6 +133,13 @@ class DefaultControllerTest extends WebTestCase
 
         $surveyAnswers = $this->em->getRepository('IITAllSpeakBundle:SurveyAnswer')->findAll();
         $this->assertCount(0, $surveyAnswers);
+
+        $adminClient = $this->getAdminClient();
+
+        $crawler = $adminClient->request('GET', '/admin_survey_summary');
+
+        $this->assertEquals(200, $adminClient->getResponse()->getStatusCode());
+        $this->assertEquals(0, $crawler->filter('.summary')->count());
     }
 
     /**
@@ -130,26 +166,22 @@ class DefaultControllerTest extends WebTestCase
 
         $surveyAnswers = $this->em->getRepository('IITAllSpeakBundle:SurveyAnswer')->findAll();
         $this->assertCount(1, $surveyAnswers);
-    }
 
-    public function testAdminUnauthenticated()
-    {
-        $client = static::createClient();
+        $adminClient = $this->getAdminClient();
 
-        $crawler = $client->request('GET', '/admin');
+        $crawler = $adminClient->request('GET', '/admin_survey_summary');
 
-        $this->assertEquals(302, $client->getResponse()->getStatusCode());
-        $this->assertRegExp('/\/login$/', $client->getResponse()->getTargetUrl());
-    }
-
-    public function testAdminAuthenticated()
-    {
-        $client = $this->getAdminClient();
-
-        $crawler = $client->request('GET', '/admin');
-
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals(1, $crawler->filter('h2')->count());
+        $averageBirthYear = 1946;
+        $averageAge = date("Y")-$averageBirthYear;
+        $averageDiagnosisDate = new \DateTime('2005-04-01');
+        $averageTimeSinceDiagnosis = (new \DateTime())->diff($averageDiagnosisDate);
+        $averageTimeSinceDiagnosisFormatted = $averageTimeSinceDiagnosis->format('%y years, %m months, %d days');
+        $this->assertEquals(200, $adminClient->getResponse()->getStatusCode());
+        $this->assertEquals(1, $crawler->filter('.summary')->count());
+        $this->assertEquals(1, $crawler->filter('.answer-num')->first()->text());
+        $this->assertEquals(0, $crawler->filter('.male-ratio')->first()->text());
+        $this->assertEquals($averageAge, $crawler->filter('.average-age')->first()->text());
+        $this->assertEquals($averageTimeSinceDiagnosisFormatted, trim($crawler->filter('.since-diagnosis')->first()->text()));
     }
 
 }
