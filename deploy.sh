@@ -2,7 +2,7 @@
 
 git reset --hard
 git pull
-chmod u+x deploy.sh
+chmod g+x deploy.sh
 cd src
 composer install
 npm install
