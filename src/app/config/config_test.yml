@@ -25,3 +25,7 @@ security:
 doctrine:
     dbal:
         dbname: "%database_name%_test"
+        charset: utf8
+        default_table_options:
+          charset: utf8
+          collate: utf8_unicode_ci
