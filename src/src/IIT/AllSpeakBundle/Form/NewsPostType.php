@@ -18,9 +18,9 @@ class NewsPostType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('itText', TextareaType::class, ['label' => 'NewsPost.itText'])
-            ->add('enText', TextareaType::class, ['label' => 'NewsPost.enText'])
-            ->add('link', TextType::class, ['label' => 'NewsPost.link'])
+            ->add('itText', TextareaType::class, ['label' => 'NewsPost.itText', 'required' => false])
+            ->add('enText', TextareaType::class, ['label' => 'NewsPost.enText', 'required' => false])
+            ->add('link', TextType::class, ['label' => 'NewsPost.link', 'required' => false])
             ->add('ts', DateTimeType::class, ['label' => 'NewsPost.ts']);
     }
     
