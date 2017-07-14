@@ -5,7 +5,7 @@
 
     <ul class=" row">
         {% for newsPost in newsPosts %}
-            <li class="col-xs-6">
+            <li class="col-xs-12">
                 <a href="{{ path('newspost_edit', { 'id': newsPost.id }) }}">
                     {{ newsPost.ts|date("m/d/Y") }} - {{ newsPost.enText }}
                 </a>
