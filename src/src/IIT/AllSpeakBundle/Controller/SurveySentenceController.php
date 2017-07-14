@@ -42,7 +42,7 @@ class SurveySentenceController extends Controller
             $em->persist($surveySentence);
             $em->flush($surveySentence);
 
-            return $this->redirectToRoute('surveysentence_show', array('id' => $surveySentence->getId()));
+            return $this->redirectToRoute('surveysentence_index');
         }
 
         return $this->render('IITAllSpeakBundle:surveySentence:new.html.twig', array(
