@@ -1,0 +1,26 @@
+IIT\AllSpeakBundle\Entity\NewsPost:
+    type: entity
+    table: null
+    repositoryClass: IIT\AllSpeakBundle\Repository\NewsPostRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        itText:
+            type: string
+            length: '600'
+            nullable: true
+        enText:
+            type: string
+            length: '600'
+            nullable: true
+        link:
+            type: string
+            length: '600'
+            nullable: true
+        ts:
+            type: datetime
+    lifecycleCallbacks: {  }

@@ -16,3 +16,7 @@ SurveyForm.CommunicativeFunction: 'Comunicative Function (min:0, max:4)'
 SurveyForm.Sentences: 'Sentences (min:1, max:10)'
 SurveyForm.Submit: Submit
 SurveyEnd: Thank you for completing the survey.
+NewsPost.itText: Italian Text
+NewsPost.enText: English Text
+NewsPost.link: Link
+NewsPost.ts: Timestamp

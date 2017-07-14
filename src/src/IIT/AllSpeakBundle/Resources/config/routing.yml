@@ -50,3 +50,6 @@ iit_all_speak_surveysentence:
     resource: "@IITAllSpeakBundle/Resources/config/routing/surveysentence.yml"
     prefix:   /admin/surveysentence
 
+iit_all_speak_newspost:
+      resource: "@IITAllSpeakBundle/Resources/config/routing/newspost.yml"
+      prefix:   /admin/newspost

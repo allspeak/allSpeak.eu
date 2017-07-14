@@ -1,0 +1,24 @@
+newspost_index:
+    path:     /
+    defaults: { _controller: "IITAllSpeakBundle:NewsPost:index" }
+    methods:  GET
+
+newspost_show:
+    path:     /{id}/show
+    defaults: { _controller: "IITAllSpeakBundle:NewsPost:show" }
+    methods:  GET
+
+newspost_new:
+    path:     /new
+    defaults: { _controller: "IITAllSpeakBundle:NewsPost:new" }
+    methods:  [GET, POST]
+
+newspost_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "IITAllSpeakBundle:NewsPost:edit" }
+    methods:  [GET, POST]
+
+newspost_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "IITAllSpeakBundle:NewsPost:delete" }
+    methods:  DELETE
