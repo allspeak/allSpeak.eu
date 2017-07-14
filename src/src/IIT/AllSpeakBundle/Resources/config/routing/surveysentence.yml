@@ -1,0 +1,19 @@
+surveysentence_index:
+    path:     /
+    defaults: { _controller: "IITAllSpeakBundle:SurveySentence:index" }
+    methods:  GET
+
+surveysentence_new:
+    path:     /new
+    defaults: { _controller: "IITAllSpeakBundle:SurveySentence:new" }
+    methods:  [GET, POST]
+
+surveysentence_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "IITAllSpeakBundle:SurveySentence:edit" }
+    methods:  [GET, POST]
+
+surveysentence_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "IITAllSpeakBundle:SurveySentence:delete" }
+    methods:  DELETE

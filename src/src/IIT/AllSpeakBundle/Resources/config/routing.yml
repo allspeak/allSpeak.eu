@@ -46,3 +46,7 @@ logout:
 survey_logout:
     path:     /survey_logout
 
+iit_all_speak_surveysentence:
+    resource: "@IITAllSpeakBundle/Resources/config/routing/surveysentence.yml"
+    prefix:   /admin/surveysentence
+

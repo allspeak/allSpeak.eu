@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Survey Sentences list</h1>
+
+    <ul class="list-group row">
+        {% for surveySentence in surveySentences %}
+            <li class="list-group-item col-xs-4">
+                <a href="{{ path('surveysentence_edit', { 'id': surveySentence.id }) }}">
+                    {{ surveySentence.text }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div class="row">
+        <div class="col-xs-4">
+            <a class="btn btn-default" href="{{ path('surveysentence_new') }}">New</a>
+            <a class="btn btn-default" href="{{ path('admin') }}">Admin panel</a>
+        </div>
+    </div>
+
+{% endblock %}

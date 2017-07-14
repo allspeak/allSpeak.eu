@@ -2,6 +2,7 @@
 
 .menu {
     height: 50px;
+    margin-bottom: 30px;
 }
 
 .menu .entry {
@@ -34,4 +35,8 @@
     border: solid #e6eaef 1px;
     border-radius: 5px;
     user-select: none;
+}
+
+li {
+    list-style: none;
 }

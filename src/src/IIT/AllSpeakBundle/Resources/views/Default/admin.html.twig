@@ -1,10 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="row">
-        <div class="col-sm-offset-1 col-sm-10">
-            <h2>Admin panel</h2>
+    <h2>Admin panel</h2>
+    <ul>
+        <li>
+            <a href="{{ path('surveysentence_index') }}">Survey Sentences Management</a>
+        </li>
+        <li>
             <a href="{{ path('surveySummary') }}">Survey Summary</a>
-        </div>
-    </div>
+        </li>
+    </ul>
 {% endblock %}
