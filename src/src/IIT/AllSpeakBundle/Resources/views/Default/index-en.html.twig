@@ -1,66 +1,62 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="row index">
-        <div class="col-sm-offset-1 col-sm-10">
-            <div>
-                <p>
-                    AllSpeak is a <a href="http://www.arisla.org/wp-content/uploads/2015/12/ALLSpeak.pdf">research
-                        progetto</a>
-                    under development in the <a
-                            href="https://iit.it/lines/robotics-brain-and-cognitive-sciences">Unità Robotics,
-                        Brain and
-                        Cognitive Sciences (RBCS)</a>
-                    of the <a href="https://iit.it">Istituto Italiano di Tecnologia (IIT)</a> in Genoa, Italy. The
-                    project has been funded by support from the
-                    <a href="http://www.arisla.org/">Fondazione Italiana di Ricerca per la Sclerosi Laterale
-                        Amiotrofica
-                        (ARISLA)</a>, using the funding collected by the <a
-                            href="https://en.wikipedia.org/wiki/Ice_Bucket_Challenge">Ice Bucket
-                        Challenge 2015 campaign</a>
-                    promoted and organized by the <a href="www.aisla.it">Associazione Italiana Sclerosi
-                        Laterale
-                        Amiotrofica (AISLA)</a>.
-                </p>
+    <div>
+        <p>
+            AllSpeak is a <a href="http://www.arisla.org/wp-content/uploads/2015/12/ALLSpeak.pdf">research
+                progetto</a>
+            under development in the <a
+                    href="https://iit.it/lines/robotics-brain-and-cognitive-sciences">Unità Robotics,
+                Brain and
+                Cognitive Sciences (RBCS)</a>
+            of the <a href="https://iit.it">Istituto Italiano di Tecnologia (IIT)</a> in Genoa, Italy. The
+            project has been funded by support from the
+            <a href="http://www.arisla.org/">Fondazione Italiana di Ricerca per la Sclerosi Laterale
+                Amiotrofica
+                (ARISLA)</a>, using the funding collected by the <a
+                    href="https://en.wikipedia.org/wiki/Ice_Bucket_Challenge">Ice Bucket
+                Challenge 2015 campaign</a>
+            promoted and organized by the <a href="www.aisla.it">Associazione Italiana Sclerosi
+                Laterale
+                Amiotrofica (AISLA)</a>.
+        </p>
+    </div>
+    <div>
+        <p>
+            AllSpeak will be an Android smartphone App able to help ALS patients to verbally communicate their
+            primary needs. Through a continuous retraining of its own embedded machine learning algorithms, the
+            App will be able to recognize a limited set of short verbal commands and playback them using the
+            original patient’s voice.
+        </p>
+    </div>
+    <div>
+        <p>
+            Once completed and validated on a ALS patient cohort, the App will be distributed for free on the
+            usual Google’s Play Store channel..
+        </p>
+    </div>
+    <div class="partners-section">
+        <h4>Partners</h4>
+        <div class="row partners">
+            <div class="col-xs-offset-1 col-xs-4 col-sm-offset-0 col-sm-3">
+                <a href="http://www.arisla.org/" class="thumbnail">
+                    <img src="{{ asset('dist/img/arislaLogo.jpg') }}" alt="Logo Arisla">
+                </a>
             </div>
-            <div>
-                <p>
-                    AllSpeak will be an Android smartphone App able to help ALS patients to verbally communicate their
-                    primary needs. Through a continuous retraining of its own embedded machine learning algorithms, the
-                    App will be able to recognize a limited set of short verbal commands and playback them using the
-                    original patient’s voice.
-                </p>
+            <div class="col-xs-offset-2 col-xs-4 col-sm-offset-0 col-sm-3">
+                <a href="http://iit.it" class="thumbnail">
+                    <img src="{{ asset('dist/img/iitLogo.jpg') }}" alt="Logo IIT">
+                </a>
             </div>
-            <div>
-                <p>
-                    Once completed and validated on a ALS patient cohort, the App will be distributed for free on the
-                    usual Google’s Play Store channel..
-                </p>
+            <div class="col-xs-offset-1 col-xs-4 col-sm-offset-0 col-sm-3">
+                <a href="http://www.hsr.it/" class="thumbnail">
+                    <img src="{{ asset('dist/img/osrLogo.jpg') }}" alt="Logo OSR">
+                </a>
             </div>
-            <div class="partners-section">
-                <h4>Partners</h4>
-                <div class="row partners">
-                    <div class="col-xs-offset-1 col-xs-4 col-sm-offset-0 col-sm-3">
-                        <a href="http://www.arisla.org/" class="thumbnail">
-                            <img src="{{ asset('dist/img/arislaLogo.jpg') }}" alt="Logo Arisla">
-                        </a>
-                    </div>
-                    <div class="col-xs-offset-2 col-xs-4 col-sm-offset-0 col-sm-3">
-                        <a href="http://iit.it" class="thumbnail">
-                            <img src="{{ asset('dist/img/iitLogo.jpg') }}" alt="Logo IIT">
-                        </a>
-                    </div>
-                    <div class="col-xs-offset-1 col-xs-4 col-sm-offset-0 col-sm-3">
-                        <a href="http://www.hsr.it/" class="thumbnail">
-                            <img src="{{ asset('dist/img/osrLogo.jpg') }}" alt="Logo OSR">
-                        </a>
-                    </div>
-                    <div class="col-xs-offset-2 col-xs-4 col-sm-offset-0 col-sm-3">
-                        <a href="http://www.aisla.it/" class="thumbnail">
-                            <img src="{{ asset('dist/img/aislaLogo.jpg') }}" alt="Logo AISLA">
-                        </a>
-                    </div>
-                </div>
+            <div class="col-xs-offset-2 col-xs-4 col-sm-offset-0 col-sm-3">
+                <a href="http://www.aisla.it/" class="thumbnail">
+                    <img src="{{ asset('dist/img/aislaLogo.jpg') }}" alt="Logo AISLA">
+                </a>
             </div>
         </div>
     </div>

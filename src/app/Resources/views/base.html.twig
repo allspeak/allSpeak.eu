@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>{% block title %}All Speak{% endblock %}</title>
-        <meta name="viewport"
-              content="width=device-width, initial-scale=1, maximum-scale=1"
-              charset="UTF-8" />
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        <div id="wrapper">
-            <div class="container-fluid">
+<head>
+    <title>{% block title %}All Speak{% endblock %}</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1"
+          charset="UTF-8"/>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
+<div id="wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
                 <div class="row menu">
                     <div class="col-xs-7">
                         <a href="{{ url('homepage') }}">
-                            <img src="{{ asset('dist/img/allSpeakLogo.jpg') }}" width="83px" heigth="50px" />
+                            <img src="{{ asset('dist/img/allSpeakLogo.jpg') }}" width="83px" heigth="50px"/>
                         </a>
                     </div>
                     <div class="col-xs-5 text-right">
@@ -34,8 +36,10 @@
                 {% block body %}{% endblock %}
             </div>
         </div>
-        <script src="{{ asset('dist/bundle.js') }}"></script>
-        {% block javascripts %}
-        {% endblock %}
-    </body>
+    </div>
+</div>
+<script src="{{ asset('dist/bundle.js') }}"></script>
+{% block javascripts %}
+{% endblock %}
+</body>
 </html>
