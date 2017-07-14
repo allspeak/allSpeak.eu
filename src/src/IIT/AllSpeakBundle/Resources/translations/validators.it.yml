@@ -1,0 +1,12 @@
+surveyAnswer.gender.notvalid: Genere non valido
+surveyAnswer.birthYear.belowLimit: L'anno di nascita dev'essere maggiore o uguale a {{ limit }}
+surveyAnswer.birthYear.overLimit: L'anno di nascita dev'essere minore o uguale all'anno corrente
+surveyAnswer.alsfrsr.empty: Il campo alsfrs-r non puo' essere lasciato vuoto
+surveyAnswer.alsfrsr.belowLimit: L'alsfrs-r dev'essere maggiore o uguale a {{ limit }}
+surveyAnswer.alsfrsr.overLimit: L'alsfrs-r dev'essere minore o uguale a {{ limit }}
+surveyAnswer.communicativeFunction.empty: Il campo funzione comunicativa non puo' essere lasciato vuoto
+surveyAnswer.communicativeFunction.belowLimit: Il valore del campo funzione comunicativa dev'essere maggiore o uguale a {{ limit }}
+surveyAnswer.communicativeFunction.overLimit: Il valore del campo funzione comunicativa dev'essere minore o uguale a {{ limit }}
+surveyAnswer.diagnosis.notValid: Diagnosi non valida
+surveyAnswer.sentences.belowLimit: E' necessario specificare almeno una frase
+surveyAnswer.sentences.aboveLimit: Non e' possibile specificare piu' di {{ limit }} frasi

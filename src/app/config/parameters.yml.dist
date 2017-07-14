@@ -19,3 +19,6 @@ parameters:
     secret:            ThisTokenIsNotSoSecretChangeIt
     surveytaker_password: pwd
     admin_password: admin
+
+    locale:     en
+    languages: (it|en)

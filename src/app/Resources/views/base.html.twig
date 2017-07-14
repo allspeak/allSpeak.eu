@@ -22,7 +22,7 @@
                             Admin
                         </a>
                         <a class="entry" href="{{ url('survey') }}">
-                            Survey
+                            {% trans %}Survey{% endtrans %}
                         </a>
                         {% if app.user %}
                             <a class="entry" href="{{ logout_path() }}">

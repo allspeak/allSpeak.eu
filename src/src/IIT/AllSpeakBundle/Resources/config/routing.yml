@@ -1,26 +1,40 @@
 homepage:
-    path:     /
+    path:     /{_locale}/
     defaults: { _controller: IITAllSpeakBundle:Default:index }
+    requirements:
+      _locale: en|it
+
+homepage_nolocale:
+    path:     /
+    defaults: { _controller: IITAllSpeakBundle:Default:index, _locale: "%locale%" }
+    requirements:
+      _locale: en|it
 
 survey:
-    path:     /survey
+    path:     /{_locale}/survey
     defaults: { _controller: IITAllSpeakBundle:Default:survey }
+    requirements:
+      _locale: en|it
 
 admin:
     path:     /admin
     defaults: { _controller: IITAllSpeakBundle:Default:admin }
 
 survey_completed:
-    path:     /survey-completed
+    path:     /{_locale}/survey-completed
     defaults: { _controller: IITAllSpeakBundle:Default:surveyCompleted }
+    requirements:
+      _locale: en|it
 
 surveySummary:
     path:     /admin_survey_summary
     defaults: { _controller: IITAllSpeakBundle:Default:surveySummary }
 
 survey_login:
-    path:     /survey_login
+    path:     /{_locale}/survey_login
     defaults: { _controller: IITAllSpeakBundle:Security:surveyLogin }
+    requirements:
+      _locale: en|it
 
 login:
     path:     /login

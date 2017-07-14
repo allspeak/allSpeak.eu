@@ -1,0 +1,13 @@
+surveyAnswer.gender.notvalid: Gender not valid
+surveyAnswer.birthYear.belowLimit: The year of birth must be greater than or equal to {{ limit }}
+surveyAnswer.birthYear.overLimit: The year of birth must be less than or equal to the current year
+surveyAnswer.alsfrsr.empty: The field alsfrs-r cannot be left empty
+surveyAnswer.alsfrsr.belowLimit: The alsfrs-r must be greater than or equal to {{ limit }}
+surveyAnswer.alsfrsr.overLimit: The L'alsfrs-r must be less than or equal to {{ limit }}
+surveyAnswer.communicativeFunction.empty: The communicative function cannot be left empty
+surveyAnswer.communicativeFunction.belowLimit: The communicative function must be greater than or equal to {{ limit }}
+surveyAnswer.communicativeFunction.overLimit: The communicative function must be less than or equal to {{ limit }}
+surveyAnswer.diagnosis.notValid: Diagnosis not valid
+surveyAnswer.sentences.belowLimit: It's necessary to select at least one sentence
+surveyAnswer.sentences.aboveLimit: It's not possible to select more than {{ limit }} sentences
+SurveyForm.BirthYear.constraint: '(format YYYY, eg: 1970)'

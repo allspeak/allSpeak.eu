@@ -23,7 +23,7 @@ security:
             security: false
 
         survey:
-            pattern: ^/survey
+            pattern: ^/%languages%/survey
             anonymous: ~
             # activate different ways to authenticate
 
@@ -58,7 +58,7 @@ security:
 
     access_control:
         # require ROLE_ADMIN for /admin*
-        - { path: ^/survey$, roles: ROLE_SURVEYTAKER }
+        - { path: ^/%languages%/survey$, roles: ROLE_SURVEYTAKER }
         - { path: ^/admin, roles: ROLE_ADMIN }
 
     encoders:

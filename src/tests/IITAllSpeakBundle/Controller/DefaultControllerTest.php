@@ -58,7 +58,7 @@ class DefaultControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/');
+        $crawler = $client->request('GET', '/it/');
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals(1, $crawler->filter('.index')->count());
@@ -68,7 +68,7 @@ class DefaultControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/survey');
+        $crawler = $client->request('GET', '/it/survey');
 
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
         $this->assertRegExp('/\/survey_login$/', $client->getResponse()->getTargetUrl());
@@ -78,7 +78,7 @@ class DefaultControllerTest extends WebTestCase
     {
         $client = $this->getSurveyTakerClient();
 
-        $crawler = $client->request('GET', '/survey');
+        $crawler = $client->request('GET', '/it/survey');
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals(1, $crawler->filter('form')->count());
@@ -120,9 +120,9 @@ class DefaultControllerTest extends WebTestCase
     {
         $client = $this->getSurveyTakerClient();
 
-        $crawler = $client->request('GET', '/survey');
+        $crawler = $client->request('GET', '/it/survey');
 
-        $form = $crawler->selectButton('Conferma')->form();
+        $form = $crawler->selectButton('Invia')->form();
         $form['form[gender]'] = 'M';
 
         $crawler = $client->submit($form);
@@ -149,9 +149,9 @@ class DefaultControllerTest extends WebTestCase
     {
         $client = $this->getSurveyTakerClient();
 
-        $crawler = $client->request('GET', '/survey');
+        $crawler = $client->request('GET', '/it/survey');
 
-        $form = $crawler->selectButton('Conferma')->form();
+        $form = $crawler->selectButton('Invia')->form();
         $form['form[gender]'] = 'F';
         $form['form[birthYear]'] = '1946';
         $form['form[diagnosisDate]'] = '2005-04-01';

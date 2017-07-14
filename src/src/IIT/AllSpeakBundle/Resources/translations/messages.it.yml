@@ -1,0 +1,18 @@
+Gender: Genere
+Male: Maschio
+Female: Femmina
+Spinal: Spinale
+Bulbar: Bulbare
+BirthYear: Anno di nascita
+DiagnosisDate: Data di diagnosi
+Diagnosis: Diagnosi
+ALSFRSR: ALSFRS-R
+Survey: Questionario
+SurveyForm.BirthYear: "Anno di nascita (formato YYYY, eg: 1970)"
+SurveyForm.DiagnosisDate: Data di diagnosi
+SurveyForm.ALSFRSR: "ALSFRS-R (min:0, max:40)"
+SurveyForm.CommunicativeFunction: "Funzione comunicativa (min:0, max:4)"
+SurveyForm.Diagnosis: Diagnosi
+SurveyForm.Sentences: "Selezionare le frasi piu' importanti (min:1, max:10)"
+SurveyForm.Submit: Invia
+SurveyEnd: Grazie per aver completato il questionario.

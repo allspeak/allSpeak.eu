@@ -2,3 +2,8 @@ services:
 #    iit_all_speak.example:
 #        class: IIT\AllSpeakBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+  iit_all_speak.locale_listener:
+        class: IIT\AllSpeakBundle\EventListener\LocaleListener
+        arguments: ['%kernel.default_locale%']
+        tags:
+            - { name: kernel.event_subscriber }

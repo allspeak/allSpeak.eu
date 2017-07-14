@@ -14,9 +14,10 @@ use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        return $this->render('IITAllSpeakBundle:Default:index.html.twig');
+        $locale = $request->getLocale();
+        return $this->render("IITAllSpeakBundle:Default:index-$locale.html.twig");
     }
 
     public function surveyAction(Request $request)
@@ -24,52 +25,52 @@ class DefaultController extends Controller
         $surveyAnswer = new SurveyAnswer();
 
         $genderChoices = [
-            'Maschio' => 'M',
-            'Femmina' => 'F'
+            'Male' => 'M',
+            'Female' => 'F'
         ];
         $currentYear = date("Y");
         $minDiagnosisYear = 1980;
         $diagnosisYearChoices = range($minDiagnosisYear, $currentYear);
         $diagnosisChoices = [
-            'Spinale' => 'S',
-            'Bulbare' => 'B'
+            'Spinal' => 'S',
+            'Bulbar' => 'B'
         ];
         $useValueAsLabel = function ($value, $key, $index) {
             return $value;
         };
         $form = $this->createFormBuilder($surveyAnswer)
             ->add('gender', ChoiceType::class, [
-                'label' => 'Genere',
+                'label' => 'Gender',
                 'choices' => $genderChoices
             ])
             ->add('birthYear', IntegerType::class, [
-                'label' => 'Anno di nascita (formato YYYY, eg: 1970)'
+                'label' => "SurveyForm.BirthYear"
             ])
             ->add('diagnosisDate', DateType::class, [
-                'label' => 'Periodo di diagnosi',
+                'label' => 'DiagnosisDate',
                 'widget' => 'single_text',
                 'html5' => false,
                 'attr' => ['class' => 'js-datepicker'],
             ])
             ->add('alsfrsr', IntegerType::class, [
-                'label' => 'ALSFRS-R (min:0, max:40)'
+                'label' => 'SurveyForm.ALSFRSR'
             ])
             ->add('communicationFunction', IntegerType::class, [
-                'label' => 'Funzione comunicativa (min:0, max:4)'
+                'label' => 'SurveyForm.CommunicativeFunction'
             ])
             ->add('diagnosis', ChoiceType::class, [
-                'label' => 'Diagnosi',
+                'label' => 'Diagnosis',
                 'choices' => $diagnosisChoices
             ])
             ->add('sentences', EntityType::class, [
-                'label' => "Selezionare le frasi piu' importanti (min:1, max:10)",
+                'label' => "SurveyForm.Sentences",
                 'class' => 'IITAllSpeakBundle:SurveySentence',
                 'multiple' => true,
                 'expanded' => true,
                 'choice_label' => 'text'
             ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Conferma'
+                'label' => 'SurveyForm.Submit'
             ])
             ->getForm();
 
