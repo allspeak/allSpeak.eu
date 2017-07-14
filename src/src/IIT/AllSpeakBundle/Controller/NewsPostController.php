@@ -45,7 +45,7 @@ class NewsPostController extends Controller
             $em->persist($newsPost);
             $em->flush($newsPost);
 
-            return $this->redirectToRoute('newspost_show', array('id' => $newsPost->getId()));
+            return $this->redirectToRoute('newspost_index');
         }
 
         return $this->render('IITAllSpeakBundle:NewsPost:new.html.twig', array(
