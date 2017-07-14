@@ -16,8 +16,13 @@ class DefaultController extends Controller
 {
     public function indexAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
         $locale = $request->getLocale();
-        return $this->render("IITAllSpeakBundle:Default:index-$locale.html.twig");
+        $newsPosts = $em->getRepository('IITAllSpeakBundle:NewsPost')->findAll(5);
+
+        return $this->render("IITAllSpeakBundle:Default:index-$locale.html.twig", array(
+            'newsPosts' => $newsPosts,
+        ));
     }
 
     public function surveyAction(Request $request)

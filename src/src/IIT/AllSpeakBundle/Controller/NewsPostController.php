@@ -60,11 +60,9 @@ class NewsPostController extends Controller
      */
     public function showAction(NewsPost $newsPost)
     {
-        $deleteForm = $this->createDeleteForm($newsPost);
 
         return $this->render('IITAllSpeakBundle:NewsPost:show.html.twig', array(
-            'newsPost' => $newsPost,
-            'delete_form' => $deleteForm->createView(),
+            'newsPost' => $newsPost
         ));
     }
 

@@ -40,3 +40,11 @@
 li {
     list-style: none;
 }
+
+.news h3 {
+    margin-top: 0;
+}
+
+.news .newsPost {
+    margin-bottom: 10px;
+}

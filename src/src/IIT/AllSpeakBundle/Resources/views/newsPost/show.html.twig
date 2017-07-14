@@ -1,44 +1,9 @@
-{% extends 'base.html.twig' %}
-
-{% block body %}
-    <h1>Newspost</h1>
-
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ newsPost.id }}</td>
-            </tr>
-            <tr>
-                <th>Ittext</th>
-                <td>{{ newsPost.itText }}</td>
-            </tr>
-            <tr>
-                <th>Entext</th>
-                <td>{{ newsPost.enText }}</td>
-            </tr>
-            <tr>
-                <th>Link</th>
-                <td>{{ newsPost.link }}</td>
-            </tr>
-            <tr>
-                <th>Ts</th>
-                <td>{% if newsPost.ts %}{{ newsPost.ts|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('newspost_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('newspost_edit', { 'id': newsPost.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
-{% endblock %}
+<div class="newsPost">
+    {% if newsPost.link %}
+    <a href="{{ newsPost.link }}">
+        {% endif %}
+        {{ newsPost.ts|date("m/d/Y") }} - {{ newsPost.enText }}
+        {% if newsPost.link %}
+    </a>
+    {% endif %}
+</div>

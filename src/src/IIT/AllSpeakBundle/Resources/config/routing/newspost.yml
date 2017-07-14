@@ -3,11 +3,6 @@ newspost_index:
     defaults: { _controller: "IITAllSpeakBundle:NewsPost:index" }
     methods:  GET
 
-newspost_show:
-    path:     /{id}/show
-    defaults: { _controller: "IITAllSpeakBundle:NewsPost:show" }
-    methods:  GET
-
 newspost_new:
     path:     /new
     defaults: { _controller: "IITAllSpeakBundle:NewsPost:new" }
