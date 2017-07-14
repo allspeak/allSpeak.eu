@@ -10,4 +10,8 @@ namespace IIT\AllSpeakBundle\Repository;
  */
 class NewsPostRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findAll(int $limit = null)
+    {
+        return $this->findBy([], array('ts' => 'DESC'), $limit);
+    }
 }
