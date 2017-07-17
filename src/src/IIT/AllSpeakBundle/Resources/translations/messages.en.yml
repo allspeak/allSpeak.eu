@@ -8,6 +8,7 @@ DiagnosisDate: Diagnosis date
 Diagnosis: Diagnosis
 ALSFRSR: ALSFRS-R
 Survey: Survey
+Details: Details
 SurveySentences: Most important sentences
 CommunicativeFunction: 'Communicative function'
 SurveyForm.BirthYear: 'Birth Year (format YYYY, eg: 1970)'

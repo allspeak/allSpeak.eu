@@ -20,11 +20,14 @@
                         </a>
                     </div>
                     <div class="col-xs-5 text-right">
-                        <a class="entry" href="{{ url('admin') }}">
-                            Admin
+                        <a class="entry" href="{{ url('details') }}">
+                            {% trans %}Details{% endtrans %}
                         </a>
                         <a class="entry" href="{{ url('survey') }}">
                             {% trans %}Survey{% endtrans %}
+                        </a>
+                        <a class="entry" href="{{ url('admin') }}">
+                            Admin
                         </a>
                         {% if app.user %}
                             <a class="entry" href="{{ logout_path() }}">

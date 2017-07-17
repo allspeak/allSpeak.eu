@@ -8,6 +8,7 @@ DiagnosisDate: Data di diagnosi
 Diagnosis: Diagnosi
 ALSFRSR: ALSFRS-R
 Survey: Questionario
+Details: Dettagli
 SurveyForm.BirthYear: "Anno di nascita (formato YYYY, eg: 1970)"
 SurveyForm.DiagnosisDate: Data di diagnosi
 SurveyForm.ALSFRSR: "ALSFRS-R (min:0, max:40)"

@@ -24,6 +24,13 @@ class DefaultController extends Controller
             'newsPosts' => $newsPosts,
         ));
     }
+    public function detailsAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $locale = $request->getLocale();
+
+        return $this->render("IITAllSpeakBundle:Default:details-$locale.html.twig");
+    }
 
     public function surveyAction(Request $request)
     {

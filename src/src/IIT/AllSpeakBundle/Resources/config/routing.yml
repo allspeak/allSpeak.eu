@@ -10,6 +10,12 @@ homepage_nolocale:
     requirements:
       _locale: en|it
 
+details:
+    path:     /{_locale}/details
+    defaults: { _controller: IITAllSpeakBundle:Default:details, _locale: "%locale%" }
+    requirements:
+      _locale: en|it
+
 survey:
     path:     /{_locale}/survey
     defaults: { _controller: IITAllSpeakBundle:Default:survey }
