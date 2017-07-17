@@ -1,11 +1,22 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="row survey">
-        <div class="col-sm-offset-1 col-sm-10">
-            {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
-            {{ form_widget(form) }}
-            {{ form_end(form) }}
+    <div class="survey">
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+        <div class="row">
+            <div class="col-xs-3">
+                {{ form_row(form.gender) }}
+                {{ form_row(form.birthYear) }}
+                {{ form_row(form.diagnosisDate) }}
+                {{ form_row(form.alsfrsr) }}
+                {{ form_row(form.communicationFunction) }}
+                {{ form_row(form.diagnosis) }}
+            </div>
+            <div class="col-xs-9">
+                {{ form_row(form.sentences) }}
+            </div>
         </div>
+
+        {{ form_end(form) }}
     </div>
 {% endblock %}
