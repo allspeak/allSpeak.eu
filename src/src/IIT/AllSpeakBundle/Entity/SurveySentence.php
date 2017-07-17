@@ -17,6 +17,11 @@ class SurveySentence
      */
     private $itText;
 
+    /**
+     * @var string
+     */
+    private $enText;
+
 
     /**
      * Get id
@@ -50,6 +55,30 @@ class SurveySentence
     public function getItText()
     {
         return $this->itText;
+    }
+
+    /**
+     * Set text
+     *
+     * @param string $enText
+     *
+     * @return SurveySentence
+     */
+    public function setEnText($enText)
+    {
+        $this->enText = $enText;
+
+        return $this;
+    }
+
+    /**
+     * Get enText
+     *
+     * @return string
+     */
+    public function getEnText()
+    {
+        return $this->enText;
     }
 }
 

@@ -12,5 +12,9 @@ IIT\AllSpeakBundle\Entity\SurveySentence:
         itText:
             type: string
             length: 255
-            unique: true
+            nullable: true
+        enText:
+            type: string
+            length: 255
+            nullable: true
     lifecycleCallbacks: {  }

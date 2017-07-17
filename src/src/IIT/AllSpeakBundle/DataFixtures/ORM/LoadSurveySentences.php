@@ -16,7 +16,7 @@ class LoadSurveySentences implements FixtureInterface
         if ($surveySentencesCount > 0)
             return;
 
-        $sentences = [
+        $itSentences = [
             'Ho fame',
             'Ho sete',
             'Ho sonno',
@@ -41,9 +41,36 @@ class LoadSurveySentences implements FixtureInterface
             'Passami il telefono',
             'Voglio stare solo'
         ];
-        foreach ($sentences as $s) {
+        $enSentences = [
+            "I'm hungry",
+            "I'm thirsty",
+            "I'm sleepy",
+            "I'm hot",
+            "I'm cold",
+            "I need to go to the toilet",
+            "I'm sore",
+            "Hello",
+            "How are you?",
+            "How is ...?",
+            "See you tomorrow",
+            "Call ...",
+            "Say hello to ...",
+            "I love you",
+            "Too much saliva",
+            "I'd like to take a shower",
+            "Thanks",
+            "You are welcome",
+            "I'm angry",
+            "I'm sad",
+            "It's all right",
+            "Hand me the phone",
+            "I want to be alone"
+        ];
+        foreach ($itSentences as $i => $itS) {
+            $enS = $enSentences[$i];
             $surveySentence = new SurveySentence();
-            $surveySentence->setItText($s);
+            $surveySentence->setItText($itS);
+            $surveySentence->setenText($enS);
             $manager->persist($surveySentence);
         };
 

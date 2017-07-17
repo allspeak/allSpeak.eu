@@ -26,7 +26,6 @@ class DefaultController extends Controller
     }
     public function detailsAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
         $locale = $request->getLocale();
 
         return $this->render("IITAllSpeakBundle:Default:details-$locale.html.twig");
@@ -34,6 +33,7 @@ class DefaultController extends Controller
 
     public function surveyAction(Request $request)
     {
+        $locale = $request->getLocale();
         $surveyAnswer = new SurveyAnswer();
 
         $genderChoices = [
@@ -79,7 +79,7 @@ class DefaultController extends Controller
                 'class' => 'IITAllSpeakBundle:SurveySentence',
                 'multiple' => true,
                 'expanded' => true,
-                'choice_label' => 'itText'
+                'choice_label' => "{$locale}Text"
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'SurveyForm.Submit'
