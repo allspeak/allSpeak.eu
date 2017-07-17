@@ -9,7 +9,7 @@ IIT\AllSpeakBundle\Entity\SurveySentence:
             generator:
                 strategy: AUTO
     fields:
-        text:
+        itText:
             type: string
             length: 255
             unique: true

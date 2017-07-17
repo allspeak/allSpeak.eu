@@ -79,7 +79,7 @@ class DefaultController extends Controller
                 'class' => 'IITAllSpeakBundle:SurveySentence',
                 'multiple' => true,
                 'expanded' => true,
-                'choice_label' => 'text'
+                'choice_label' => 'itText'
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'SurveyForm.Submit'

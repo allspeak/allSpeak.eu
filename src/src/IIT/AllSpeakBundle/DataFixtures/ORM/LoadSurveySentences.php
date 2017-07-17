@@ -43,7 +43,7 @@ class LoadSurveySentences implements FixtureInterface
         ];
         foreach ($sentences as $s) {
             $surveySentence = new SurveySentence();
-            $surveySentence->setText($s);
+            $surveySentence->setItText($s);
             $manager->persist($surveySentence);
         };
 

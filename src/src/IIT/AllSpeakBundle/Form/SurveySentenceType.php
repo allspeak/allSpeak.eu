@@ -14,7 +14,7 @@ class SurveySentenceType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('text', TextType::class, ['label' => 'SurveySentence.text'])        ;
+        $builder->add('itText', TextType::class, ['label' => 'SurveySentence.text'])        ;
     }
     
     /**

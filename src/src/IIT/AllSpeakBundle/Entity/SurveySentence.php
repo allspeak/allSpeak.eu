@@ -15,7 +15,7 @@ class SurveySentence
     /**
      * @var string
      */
-    private $text;
+    private $itText;
 
 
     /**
@@ -31,25 +31,25 @@ class SurveySentence
     /**
      * Set text
      *
-     * @param string $text
+     * @param string $itText
      *
      * @return SurveySentence
      */
-    public function setText($text)
+    public function setItText($itText)
     {
-        $this->text = $text;
+        $this->itText = $itText;
 
         return $this;
     }
 
     /**
-     * Get text
+     * Get itText
      *
      * @return string
      */
-    public function getText()
+    public function getItText()
     {
-        return $this->text;
+        return $this->itText;
     }
 }
 
