@@ -22,7 +22,7 @@ class SurveySentenceController extends Controller
 
         $surveySentences = $em->getRepository('IITAllSpeakBundle:SurveySentence')->findAll();
 
-        return $this->render('IITAllSpeakBundle:surveySentence:index.html.twig', array(
+        return $this->render('IITAllSpeakBundle:SurveySentence:index.html.twig', array(
             'surveySentences' => $surveySentences
         ));
     }
@@ -45,7 +45,7 @@ class SurveySentenceController extends Controller
             return $this->redirectToRoute('surveysentence_index');
         }
 
-        return $this->render('IITAllSpeakBundle:surveySentence:new.html.twig', array(
+        return $this->render('IITAllSpeakBundle:SurveySentence:new.html.twig', array(
             'surveySentence' => $surveySentence,
             'form' => $form->createView(),
         ));
@@ -67,7 +67,7 @@ class SurveySentenceController extends Controller
             return $this->redirectToRoute('surveysentence_index');
         }
 
-        return $this->render('IITAllSpeakBundle:surveySentence:edit.html.twig', array(
+        return $this->render('IITAllSpeakBundle:SurveySentence:edit.html.twig', array(
             'surveySentence' => $surveySentence,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
