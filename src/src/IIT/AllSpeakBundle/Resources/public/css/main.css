@@ -1,8 +1,12 @@
 /* Menu */
 
 .menu {
-    height: 50px;
     margin-bottom: 30px;
+}
+
+.title {
+    display: inline-block;
+    vertical-align: bottom;
 }
 
 .menu .entry {
