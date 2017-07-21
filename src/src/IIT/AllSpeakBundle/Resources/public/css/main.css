@@ -14,7 +14,7 @@
 }
 
 .partners-section {
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .partners img {
@@ -47,4 +47,13 @@ li {
 
 .news .newsPost {
     margin-bottom: 10px;
+}
+
+.content {
+    min-height: 100vh;
+    background-color: white;
+}
+
+body {
+    background-color: lightblue;
 }
