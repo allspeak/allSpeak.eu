@@ -35,7 +35,7 @@ security:
                 check_path: survey_login
 
             logout:
-                path: /survey_logout
+                path: /en/survey_logout
                 target: /
                 invalidate_session: false
 

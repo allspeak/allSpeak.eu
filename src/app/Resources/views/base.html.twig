@@ -13,28 +13,38 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1 content">
-                <div class="row menu">
-                    <div class="col-xs-8">
+                <div class="row header">
+                    <div class="col-xl-4 text-right menu pull-right">
+                        <a href="{{ url('details') }}">
+                            {% trans %}Details{% endtrans %}
+                        </a>
+                        {% if not is_granted('ROLE_ADMIN') %}
+                            <a href="{{ url('survey') }}">
+                                {% trans %}Survey{% endtrans %}
+                            </a>
+                        {% endif %}
+                        {% if not app.user or is_granted('ROLE_ADMIN') %}
+                            <a href="{{ url('admin') }}">
+                                Admin
+                            </a>
+                        {% endif %}
+                        {% if app.user %}
+                            <a href="{{ logout_path() }}">
+                                Logout
+                            </a>
+                        {% endif %}
+                        <a href="{{ url('homepage', {_locale: 'en'}) }}">
+                            <img src="{{ asset('dist/img/usa.png') }}" width="16" heigth="16"/>
+                        </a>
+                        <a href="{{ url('homepage', {_locale: 'it'}) }}">
+                            <img src="{{ asset('dist/img/ita.png') }}" width="16" heigth="16"/>
+                        </a>
+                    </div>
+                    <div class="col-xl-8">
                         <a href="{{ url('homepage') }}">
                             <img src="{{ asset('dist/img/allSpeakLogo.jpg') }}" width="140px" heigth="100px"/>
                         </a>
                         <h3 class="title">An Automatic Speech Recognition Android App</h3>
-                    </div>
-                    <div class="col-xs-4 text-right">
-                        <a class="entry" href="{{ url('details') }}">
-                            {% trans %}Details{% endtrans %}
-                        </a>
-                        <a class="entry" href="{{ url('survey') }}">
-                            {% trans %}Survey{% endtrans %}
-                        </a>
-                        <a class="entry" href="{{ url('admin') }}">
-                            Admin
-                        </a>
-                        {% if app.user %}
-                            <a class="entry" href="{{ logout_path() }}">
-                                Logout
-                            </a>
-                        {% endif %}
                     </div>
                 </div>
                 {% block body %}{% endblock %}
