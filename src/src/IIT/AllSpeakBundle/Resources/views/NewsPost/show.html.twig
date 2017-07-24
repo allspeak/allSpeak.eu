@@ -2,7 +2,7 @@
     {% if newsPost.link %}
     <a href="{{ newsPost.link }}">
         {% endif %}
-        {{ newsPost.ts|date("m/d/Y") }} - {{ newsPost.enText }}
+        {{ newsPost.ts|date("m/d/Y") }} - {{ attribute(newsPost, _locale~'Text') }}
         {% if newsPost.link %}
     </a>
     {% endif %}

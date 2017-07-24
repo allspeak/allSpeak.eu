@@ -22,6 +22,7 @@ class DefaultController extends Controller
 
         return $this->render("IITAllSpeakBundle:Default:index-$locale.html.twig", array(
             'newsPosts' => $newsPosts,
+            '_locale' => $locale
         ));
     }
     public function detailsAction(Request $request)
